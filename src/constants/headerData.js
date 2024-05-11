@@ -1,4 +1,4 @@
-import resturantFood from '../assets/restauranfood.jpg';
+import resturantFood from '../assets/restauranfood.webp';
   
   const headerData = {
         title: "Little Lemon",
