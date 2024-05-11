@@ -14,6 +14,7 @@ import resturantChefB from "../assets/restaurantChefB.webp";
 import bookingConfirmed from "../assets/bookingConfirmed.png";
 import underConstruction from "../assets/underConstruction.PNG";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   logo,
   greekSalad,
