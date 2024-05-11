@@ -10,7 +10,7 @@
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
-    "react-animate-on-scroll": "^2.1.5",
+    "react-animate-on-scroll": "^2.1.9",
     "react-animations": "^1.0.0",
     "react-block-reveal-animation": "^1.0.1",
     "react-dom": "^18.2.0",
