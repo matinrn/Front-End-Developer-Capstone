@@ -1,4 +1,4 @@
-import { createContext, Provider, React } from "react";
+import { createContext } from "react";
 
 const DataContext = createContext({});
 export const DataContextProvider = DataContext.Provider;

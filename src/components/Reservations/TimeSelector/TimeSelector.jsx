@@ -1,5 +1,5 @@
+import React from 'react';
 import './TimeSelector.css';
-import React, { useState } from 'react';
 
 const TimeCapsule = (props) => {
 

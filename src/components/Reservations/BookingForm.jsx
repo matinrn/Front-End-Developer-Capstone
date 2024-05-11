@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import GuestSelector from './GuestSelector/GuestSelector';
 import DateSelecotr from './DateSelector/DateSelector';
 import TimeSelector from './TimeSelector/TimeSelector';
