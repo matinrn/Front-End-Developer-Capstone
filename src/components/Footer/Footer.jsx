@@ -39,4 +39,4 @@ const Footer = () => {
     </footer>);
 }
 
-export default AppWrap(Footer, 'footer', 'app__footer');
+export default AppWrap(Footer, 'footer', 'app__footer', "footer");

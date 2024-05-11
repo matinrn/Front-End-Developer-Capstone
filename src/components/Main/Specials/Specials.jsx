@@ -86,4 +86,4 @@ const Specials = () => {
     );
 }
 
-export default AppWrap(Specials, 'Menu', 'app__specials');
+export default AppWrap(Specials, 'Menu', 'app__specials', "section");

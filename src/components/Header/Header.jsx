@@ -49,4 +49,4 @@ const Header = () => {
     </header> );
 }
 
-export default AppWrap(Header, 'Landing', 'app__header');
+export default AppWrap(Header, 'Landing', 'app__header', "header");

@@ -59,4 +59,4 @@ const About = () => {
     );
 }
 
-export default AppWrap(About, 'About', 'app__about');
+export default AppWrap(About, 'About', 'app__about', "section");

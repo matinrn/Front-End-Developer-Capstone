@@ -53,4 +53,4 @@ const Testimonials = () => {
     );
 }
 
-export default AppWrap(Testimonials, 'testimonials-section', 'app__testimonials');
+export default AppWrap(Testimonials, 'testimonials-section', 'app__testimonials', "section");

@@ -1,10 +1,10 @@
 import React from "react";
 import './AppWrapper.css';
 
-const AppWrap = (Component, idName, ClassNames) => function HOC() {
+const AppWrap = (Component, idName, ClassNames, Tag="div") => function HOC() {
 
     return (
-    <div
+    <Tag
         id={idName}
         className={`app__container ${ClassNames}`}
     >
@@ -13,7 +13,7 @@ const AppWrap = (Component, idName, ClassNames) => function HOC() {
         >
             <Component />
         </div>
-    </div>);
+    </Tag>);
 };
 
 export default AppWrap;
