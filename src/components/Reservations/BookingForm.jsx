@@ -6,13 +6,8 @@ import TimeSelector from './TimeSelector/TimeSelector';
 import Reserve from './Reserve/Reserve';
 
 function BookingForm(props) {
-  const [time, setTime] = useState('00:00');
-  const [guests, setGuests] = useState(1);
-  const [date, setDate] = useState('');
-  const [ocassion, setOccasion] = useState('birthday');
-
   // contains the data of the user from the reservation page which will be submitted via server to the database
-  const [reservation, setReservation] = useState({guests: guests, date: '', time: '', ocassion: ocassion});
+  const [reservation, setReservation] = useState({guests: 1, date: new Date().toISOString().split('T')[0], time: props.availableTimeSlots.morning[0], ocassion: 'birthday'});
 
   // handler function in the Parent component
   // time is passed to it from child component
@@ -20,21 +15,17 @@ function BookingForm(props) {
     passing chooseTime handler function as props to TimeSelector component and then to TimeCapsule component from there on each click on radio button a specific time value is passed to it.
   */
   const chooseTime = (time) => {
-    setTime(time);
-
     setReservation({...reservation, time: time});
   }
 
   // handler function in the Parent component
   const chooseGuest = (guests) => {
-    setGuests(guests);
     setReservation({...reservation, guests: guests});
   }
 
   // handler function in the Parent component to get date selected from child ccomponent
 
   const chooseDate = (date) => {
-    setDate(date);
     setReservation({...reservation, date: date});
 
     props.dispatchTimeslotsOnDateChange(date);
@@ -42,8 +33,6 @@ function BookingForm(props) {
   }    
 
   const chooseOcassion = (ocassion) => {
-    setOccasion(ocassion);
-
     // reservationData['ocassion'] = ocassion;
     setReservation({...reservation, ocassion: ocassion});
   }
@@ -63,6 +52,7 @@ function BookingForm(props) {
   const validateReservation = () => {
     if (reservation.time !== '' && 
         reservation.date !== '' && 
+        new Date().getTime() - (24 * 60 * 60 * 1000) < new Date(reservation.date).getTime() && 
         reservation.guests !== '' && 
         reservation.ocassion !== '') {
       return true;
@@ -77,7 +67,7 @@ function BookingForm(props) {
       <form onSubmit={onSubmitHandler}>
         <GuestSelector chooseGuest={ chooseGuest } />
 
-        <DateSelecotr chooseDate={chooseDate} chooseOcassion={chooseOcassion} ocassion={ocassion}/>
+        <DateSelecotr chooseDate={chooseDate} chooseOcassion={chooseOcassion} ocassion={reservation.ocassion}/>
 
         <TimeSelector chooseTime={ chooseTime } availableTimeSlots={props.availableTimeSlots} />
 

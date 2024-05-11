@@ -16,7 +16,7 @@ const TimeCapsule = (props) => {
                 {
                     props.slots.map((item) => {
                         return (
-                        <span className='radio-lablel-box'>
+                        <span key={item} className='radio-lablel-box'>
                             <label htmlFor={item} className='radio-btn-label'>
                                 <input type="radio" name="timeslots-m" id={item} value={item} onClick={handleRadioChage} />
                                 {item}

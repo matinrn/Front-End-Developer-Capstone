@@ -104,7 +104,7 @@ const DateSelector = (props) => {
                {
                 ocassions.map((ocassion) => {
                 return (
-                    <option value={ocassion.value}>
+                    <option key={ocassion.value} value={ocassion.value}>
                         {ocassion.label}
                     </option>
                 );
